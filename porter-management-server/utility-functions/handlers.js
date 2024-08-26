@@ -61,7 +61,7 @@ const welcome = (req, res) => {
 	// Finally, return the welcome message to the user, along with their
 	// username given in the token
 	const loggedInUser = users.find(item => item.email === payload.email)?.username
-	res.send({ "message": `Welcome ₹{loggedInUser}!` });
+	res.send({ "message": `Welcome ${loggedInUser}!` });
 }
 
 const refresh = (req, res) => {

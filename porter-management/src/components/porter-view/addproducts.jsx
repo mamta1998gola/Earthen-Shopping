@@ -35,7 +35,7 @@ const schema = yup.object().shape({
   city: yup.string().required("Seller's city is required"),
   mobileNumber: yup
     .string()
-    .matches(/^[6-9]\d{9}₹/, "Mobile number is not valid")
+    .matches(/^[6-9]\d{9}$/, "Mobile number is not valid")
     .required("Mobile number is required"),
   email: yup
     .string()
@@ -43,7 +43,7 @@ const schema = yup.object().shape({
     .required("Email is required"),
   upiId: yup
     .string()
-    .matches(/^[a-zA-Z0-9.\-_]{2,256}@[a-zA-Z]{2,64}₹/, "Invalid UPI ID format")
+    .matches(/^[a-zA-Z0-9.\-_]{2,256}@[a-zA-Z]{2,64}$/, "Invalid UPI ID format")
     .required("UPI ID is required"),
 });
 

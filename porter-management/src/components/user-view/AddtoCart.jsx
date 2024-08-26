@@ -40,9 +40,9 @@ const AddToCart = () => {
                   <CardContent>
                     <Typography variant="h6">{item.name}</Typography>
                     <Typography variant="body2">Quantity: {item.quantity}</Typography>
-                    <Typography variant="body2">Price: ${item.price.toFixed(2)}</Typography>
+                    <Typography variant="body2">Price: ₹{item.price.toFixed(2)}</Typography>
                     <Typography variant="body2">
-                      Total: ${(item.price * item.quantity).toFixed(2)}
+                      Total: ₹{(item.price * item.quantity).toFixed(2)}
                     </Typography>
                   </CardContent>
                 </Card>
@@ -50,7 +50,7 @@ const AddToCart = () => {
             ))}
           </Grid>
           <Box sx={{ marginTop: 2, textAlign: 'center' }}>
-            <Typography variant="h6">Total Price: ${calculateTotalPrice()}</Typography>
+            <Typography variant="h6">Total Price: ₹{calculateTotalPrice()}</Typography>
             <Button
               variant="contained"
               color="secondary"

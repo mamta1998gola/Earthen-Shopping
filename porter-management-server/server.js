@@ -5,6 +5,7 @@ const { v4: uuidv4 } = require('uuid');
 const bodyParser = require('body-parser');
 const cookieParser = require("cookie-parser");
 const userRoutes = require('./routes/users');
+require('dotenv').config()
 
 const app = express();
 app.use(cookieParser());

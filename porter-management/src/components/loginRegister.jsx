@@ -46,7 +46,7 @@ const LoginRegister = () => {
 
     const submitData = (event) => {
         event.preventDefault();
-        fetch(`₹{API}/signup`, {
+        fetch(`${API}/signup`, {
             mode: 'cors',
             headers: {
                 'Content-Type': 'application/json'
@@ -73,7 +73,7 @@ const LoginRegister = () => {
     const loginReq = (event) => {
         event.preventDefault();
 
-        fetch(`₹{API}/signin`, {
+        fetch(`${API}/signin`, {
             mode: 'cors',
             headers: {
                 'Content-Type': 'application/json'
@@ -101,7 +101,7 @@ const LoginRegister = () => {
 
     return (
         <div className="auth-form">
-            <div className={`wrapper ₹{action}`}>
+            <div className={`wrapper ${action}`}>
                 <div className="form-box login">
                     <form id="loginform" onSubmit={loginReq}>
                         <h1>Login</h1>

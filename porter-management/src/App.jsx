@@ -20,7 +20,7 @@ function Root() {
   const [user, setUser] = useState({ 'username': '', 'email': '', 'password': '' })
 
   const fetchTodos = async () => {
-    const data = await fetch(`₹{API}/getAllTodos/₹{user.email}`);
+    const data = await fetch(`${API}/getAllTodos/${user.email}`);
     const todos = await data.json();
 
     setAllTodos(todos?.allTodos || []);

@@ -7,7 +7,7 @@ const router = express.Router();
 router.post('/signup', async (req, res) => {
     const { username, password, email, type } = req.body;
 
-    if (username && password && /^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+₹/.test(email)) {
+    if (username && password && /^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/.test(email)) {
 
         const userList = collection.find()
 	    const userListData = await userList.toArray()
@@ -38,7 +38,7 @@ router.put('/signup', async (req, res) => {
         res.status(400).send({ "message": "User doesn't exit!" })
     } else {
         // mongodb operation
-        await collection.updateOne({ "email": email }, { ₹set: { password } });
+        await collection.updateOne({ "email": email }, { $set: { password } });
     }
 });
 
