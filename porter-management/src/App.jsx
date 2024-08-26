@@ -7,15 +7,17 @@ import ChangePassowrd from './components/changePassword';
 import PrivateRoutes from './authroute';
 import { MyContext } from './MyContext';
 // import UserGreeting from './components/userGreetings';
-import ProductsDashboard from './components/user-view/productDashboard';
-import AddToCart from './components/user-view/addtoCart';
+import ProductsDashboard from './components/user-view/ProductDashboard';
+import AddToCart from './components/user-view/AddtoCart';
 import AddProducts from './components/porter-view/addproducts';
 // import ProductEditDashboard from './components/porter-view/ProductEditDashboard';
+import BillingShippingForm from './components/user-view/BillingShippingForm';
+import PaymentPage from './components/user-view/PaymentPage';
 
-const API = 'http://localhost:8080';
+const API = 'http://localhost:8080/users';
 
 function Root() {
-  const [user, setUser] = useState({ 'username': '', 'email': '', 'password': ''})
+  const [user, setUser] = useState({ 'username': '', 'email': '', 'password': '' })
 
   const fetchTodos = async () => {
     const data = await fetch(`₹{API}/getAllTodos/₹{user.email}`);
@@ -26,7 +28,7 @@ function Root() {
   }
 
   useEffect(() => {
-    if(user.email) {
+    if (user.email) {
       fetchTodos();
     }
   }, [user.email]);
@@ -44,6 +46,8 @@ function Root() {
             <ProductsDashboard />
           </PrivateRoutes>} />
           <Route path="/cart" element={<AddToCart />} />
+          <Route path="/payment-page" element={<PaymentPage />} />
+          <Route path="/billing-shipping" element={<BillingShippingForm />} />
           <Route path="/edit-product/:id" element={<AddProducts />} />
           <Route path="/changepassword" element={<ChangePassowrd />} />
         </Routes>
